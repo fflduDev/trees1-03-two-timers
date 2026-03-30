@@ -10,6 +10,8 @@ public class OrgChartImpl implements OrgChart{
 
 	@Override
 	public void addRoot(Employee e) {
+		GenericTreeNode<Employee> rootEmployee = new GenericTreeNode<Employee>(e);
+		nodes.add(rootEmployee);
 		// TODO Auto-generated method stub
 		
 	}
@@ -19,9 +21,17 @@ public class OrgChartImpl implements OrgChart{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	@Override
 	public void addDirectReport(Employee manager, Employee newPerson) {
+		for (int i = 0; i < nodes.size(); i++) {
+			GenericTreeNode<Employee> currentEmployee = nodes.get(i);
+			if (currentEmployee.data.equals(manager)) {
+				GenericTreeNode<Employee> newE = new GenericTreeNode<Employee>(newPerson);
+				currentEmployee.addChild(newE);
+				break;
+			}
+		}
 		// TODO Auto-generated method stub
 		
 	}
