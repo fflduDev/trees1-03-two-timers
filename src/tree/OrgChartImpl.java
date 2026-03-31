@@ -32,6 +32,7 @@ public class OrgChartImpl implements OrgChart{
 			if (currentEmployee.data.equals(manager)) {
 				GenericTreeNode<Employee> newE = new GenericTreeNode<Employee>(newPerson);
 				currentEmployee.addChild(newE);
+				nodes.add(newE);
 				break;
 			}
 		}
