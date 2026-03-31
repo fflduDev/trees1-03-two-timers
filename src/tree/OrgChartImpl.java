@@ -1,7 +1,10 @@
 package tree;
 
+
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class OrgChartImpl implements OrgChart{
 
@@ -50,6 +53,32 @@ public class OrgChartImpl implements OrgChart{
 
 	@Override
 	public void showOrgChartBreadthFirst() {
+		GenericTreeNode<Employee> rootEmployee = nodes.get(0);
+		if (rootEmployee == null) {
+			return;
+		}
+		
+		Queue<GenericTreeNode<Employee>> q = new LinkedList<>();
+		q.add(rootEmployee);
+		
+		while (!q.isEmpty()) {
+			int n = q.size();
+			
+			while (n > 0) {
+				GenericTreeNode <Employee> e = q.peek();
+				q.remove();
+				System.out.println(e.data + " ");
+				
+				for (int i = 0; i < e.children.size(); i++) {
+					q.add(e.children.get(i));
+				}
+				n--;
+			}
+			
+			System.out.println();
+		}
+		
+		
 		// TODO Auto-generated method stub
 		
 	}
