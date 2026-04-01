@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class OrgChartImpl implements OrgChart{
 
@@ -49,6 +50,37 @@ public class OrgChartImpl implements OrgChart{
 	@Override
 	public void showOrgChartDepthFirst() {
 		// TODO Auto-generated method stub
+		if (nodes == null) {
+			return;
+		}
+		
+		GenericTreeNode<Employee> rootEmployee = nodes.get(0);
+		Stack<GenericTreeNode<Employee>> stack = new Stack<>();
+		
+			
+		stack.push(rootEmployee);
+		
+		while (!stack.empty()) {
+			
+			GenericTreeNode<Employee> currentNode = stack.pop();
+			System.out.println(currentNode);
+			Queue<GenericTreeNode<Employee>> q = null;
+			
+			ArrayList<GenericTreeNode<Employee>> childrenOfCurrent = currentNode.children;
+			
+			for (int i = childrenOfCurrent.size() - 1; i >= 0; i--) {
+				
+				q = new LinkedList<>();
+				q.add(currentNode);
+				GenericTreeNode<Employee> val = childrenOfCurrent.get(i);
+				q.add(val);
+				
+				
+			}
+			
+			
+			
+		}
 		
 	}
 
