@@ -51,7 +51,9 @@ public class OrgChartImpl implements OrgChart{
 	public void showOrgChartDepthFirst() {
 		// TODO Auto-generated method stub
 		if (nodes == null) {
+			
 			return;
+			
 		}
 		
 		GenericTreeNode<Employee> rootEmployee = nodes.get(0);
@@ -63,22 +65,15 @@ public class OrgChartImpl implements OrgChart{
 		while (!stack.empty()) {
 			
 			GenericTreeNode<Employee> currentNode = stack.pop();
-			System.out.println(currentNode);
-			Queue<GenericTreeNode<Employee>> q = null;
+			System.out.println(currentNode.data);
 			
 			ArrayList<GenericTreeNode<Employee>> childrenOfCurrent = currentNode.children;
 			
 			for (int i = childrenOfCurrent.size() - 1; i >= 0; i--) {
 				
-				q = new LinkedList<>();
-				q.add(currentNode);
-				GenericTreeNode<Employee> val = childrenOfCurrent.get(i);
-				q.add(val);
-				
+				stack.push(childrenOfCurrent.get(i));
 				
 			}
-			
-			
 			
 		}
 		
