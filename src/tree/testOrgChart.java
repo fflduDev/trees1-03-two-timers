@@ -32,22 +32,15 @@ public class testOrgChart {
 		company.addDirectReport(e7, e9);
 		
 		// show it depth first
-	//	company.showOrgChartDepthFirst();
+		company.showOrgChartDepthFirst();
 		
 		// show breadth first
 		company.showOrgChartBreadthFirst();
 		
 		// and remove some people
-	//	company.removeEmployee(e4);
-	//	company.removeEmployee(e5);
+		company.removeEmployee(e4);
+		company.removeEmployee(e5);
 		
-		// show it depth first
-	//	company.showOrgChartDepthFirst();
-		
-		// show breadth first
-//		company.showOrgChartBreadthFirst();
-		
-
 	}
 
 }
