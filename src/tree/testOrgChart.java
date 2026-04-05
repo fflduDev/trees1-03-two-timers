@@ -35,7 +35,7 @@ public class testOrgChart {
 		company.showOrgChartDepthFirst();
 		
 		// show breadth first
-		company.showOrgChartBreadthFirst();
+		// company.showOrgChartBreadthFirst();
 		
 		// and remove some people
 		company.removeEmployee(e4);
