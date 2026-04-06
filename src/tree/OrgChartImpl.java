@@ -44,77 +44,17 @@ public class OrgChartImpl implements OrgChart{
 
 	@Override
 	public void removeEmployee(Employee firedPerson) {
-<<<<<<< HEAD
 		for (int i = 0; i < nodes.size(); i++) {
 		GenericTreeNode<Employee> currentEmployee = nodes.get(i);
 		
 		for (GenericTreeNode<Employee> child: currentEmployee.children)
 		if (child.data.equals(firedPerson)) {
-			currentEmployee.removeChild(firedPerson);
+			currentEmployee.removeChild(child.data);
 			break;
 			}
 		}
-		
-=======
-		// TODO Auto-generated method stub
-		GenericTreeNode<Employee> rootEmployee = nodes.get(0);
->>>>>>> a7f2ac49f3283bb0bbd323b0a9c8719f41221de6
-		
-		if (nodes == null) {
-			
-			return;
-			
-		}
-		
-		 if (rootEmployee.data.equals(firedPerson)) {
-			 
-		        nodes = null;
-		        return;
-		        
-		 }
-
-		    GenericTreeNode<Employee> target = null;
-		    GenericTreeNode<Employee> parent = null;
-
-		    // Find target node and its parent
-		    for (GenericTreeNode<Employee> node : nodes) {
-		    	
-		        for (GenericTreeNode<Employee> child : node.children) {
-		        	
-		            if (child.data.equals(firedPerson)) {
-		            	
-		                parent = node;
-		                
-		            }
-		            
-		        }
-
-		        if (node.data.equals(firedPerson)) {
-		        	
-		            target = node;
-		            
-		        }
-		        
-		    }
-
-		    if (target == null || parent == null) {
-		    	
-		        return; 
-		        
-		    }
-
-		    // Move children of removed node to its parent
-		    for (GenericTreeNode<Employee> child : target.children) {
-		    	
-		        parent.children.add(child);
-		        
-		    }
-
-		    parent.children.remove(target);
-		    nodes.remove(target);
-		    
 	}
-
+	
 	@Override
 	public void showOrgChartDepthFirst() {
 		// TODO Auto-generated method stub
