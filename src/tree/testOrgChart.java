@@ -38,6 +38,7 @@ public class testOrgChart {
 		company.showOrgChartBreadthFirst();
 		
 		// and remove some people
+<<<<<<< HEAD
 	company.removeEmployee(e4);
 	company.removeEmployee(e5);
 		
@@ -48,6 +49,11 @@ public class testOrgChart {
 	company.showOrgChartBreadthFirst();
 		
 
+=======
+		company.removeEmployee(e4);
+		company.removeEmployee(e5);
+		
+>>>>>>> a7f2ac49f3283bb0bbd323b0a9c8719f41221de6
 	}
 
 }
